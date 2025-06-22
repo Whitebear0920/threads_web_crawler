@@ -97,8 +97,8 @@ for i in post:
         print(f"Post{i['number']}img{j['img_count']}：{j['alt']}")
     print("=="*5)
 
-for p in post:
-    post_id = f"post_{(p['number']+last_index+1):04d}"
+for idx, p in enumerate(post):
+    post_id = f"post_{(last_index + idx + 1):04d}"
     base_ref.child(post_id).set({
         "text": p["text"],
         "imgs": p["imgs"]
